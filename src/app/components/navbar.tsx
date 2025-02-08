@@ -45,7 +45,7 @@ export default function Navbar() {
           <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="flex items-center">
             <Link
               href="/"
-              className="text-2xl font-bold text-blue-700 bg-gradient-to-r from-[bg-blue-500] to-bg-red-600 bg-clip-text text-transparent"
+              className="text-2xl font-bold !text-blue-700 bg-clip-text text-transparent"
             >
               Influexon
             </Link>
