@@ -7,7 +7,7 @@ import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react"
 const socialLinks = [
   // { name: "Facebook", icon: Facebook, href: "#" },
   // { name: "Twitter", icon: Twitter, href: "#" },
-  { name: "Instagram", icon: Instagram, href: "influexon" },
+  { name: "Instagram", icon: Instagram, href: "https://www.instagram.com/influexon" },
   { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/company/influexon/" },
 ]
 
