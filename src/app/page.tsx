@@ -18,7 +18,7 @@ export default function Home() {
 
   useEffect(() => {
     setTimeout(() => {
-      if(!sessionStorage.getItem('openPop')){
+      if(!localStorage.getItem('openPop')){
         const body = window.document.querySelector('body') as HTMLElement;
         body.style.overflow = 'hidden';
         setShowPopup(true);

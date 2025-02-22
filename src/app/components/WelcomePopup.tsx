@@ -13,7 +13,7 @@ export default function WelcomePopup({showPopup, setShowPopup}: any) {
 
   const handleClosePopup = () => {
     setShowPopup(false);
-    sessionStorage.setItem('openPop', JSON.stringify("true"));
+    localStorage.setItem('openPop', JSON.stringify("true"));
     const body = window.document.querySelector('body') as HTMLElement;
     body.style.overflow = 'scroll';
   };
