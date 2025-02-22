@@ -38,7 +38,7 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ type: "spring", stiffness: 50 }}
-      className="fixed top-0 z-50 w-full backdrop-blur-md bg-background/80 border-b border-border"
+      className="fixed top-0 z-50 w-full bg-white border-b border-border bg--black"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
@@ -46,7 +46,7 @@ export default function Navbar() {
           <img src="/influexon_logo.jpg" className="h-10 w-10 rounded-full"/>
             <Link
               href="/"
-              className="text-2xl font-bold !text-[#052E40] bg-clip-text text-transparent"
+              className="text-2xl font-bold !text-[#052E40] bg-clip-text text-transparent text--white"
             >
               Influexon
             </Link>

@@ -64,20 +64,24 @@ export default function Hero() {
               transition={{ delay: 0.4, duration: 0.5 }}
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
             >
+              <a href="#contact">
+                <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-3 rounded-full border border-border bg-background text-foreground font-medium hover:bg-gray-200 hover:text-accent-foreground transition-colors"
+                >
+                  Get Started
+                </motion.button>
+              </a>
+              <a href="#about ">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 rounded-full bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors"
-              >
-                Get Started
-              </motion.button>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="px-8 py-3 rounded-full border border-border bg-background text-foreground font-medium hover:bg-accent hover:text-accent-foreground transition-colors"
+                className="px-8 py-3 rounded-full border border-border bg-background text-foreground font-medium hover:bg-gray-200 hover:text-accent-foreground transition-colors"
               >
                 Learn More
               </motion.button>
+              </a>
             </motion.div>
           </motion.div>
           <motion.div style={{ y, opacity }} className="relative">

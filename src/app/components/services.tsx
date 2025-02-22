@@ -28,7 +28,7 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="py-24 bg-gradient-to-b from-white to-gray-50">
+    <section className="py-24 bg-white bg--black">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -37,8 +37,8 @@ export default function Services() {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Our Services</h2>
-          <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 text--white">Our Services</h2>
+          <p className="mt-4 text-lg text-gray-600 max-w-2xl mx-auto text--white">
             Comprehensive tools and services to power your influencer marketing strategy
           </p>
         </motion.div>
@@ -51,11 +51,11 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="relative p-6 bg-white rounded-2xl shadow-sm hover:shadow-md transition-shadow"
+              className="relative p-6 bg-white bg--black border rounded-2xl shadow-sm hover:shadow-md transition-shadow"
             >
               <service.icon className="h-8 w-8 text-primary mb-4" />
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.title}</h3>
-              <p className="text-gray-600">{service.description}</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2 text--white">{service.title}</h3>
+              <p className="text-gray-600 text--white">{service.description}</p>
             </motion.div>
           ))}
         </div>

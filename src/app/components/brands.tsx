@@ -3,13 +3,13 @@
 import { motion } from "framer-motion"
 import Image from "next/image"
 
-const brands = [
-  { name: "Brand 1", logo: "/ps.png" },
-  { name: "Brand 2", logo: "/ps.png" },
-  { name: "Brand 3", logo: "/ps.png" },
-  { name: "Brand 4", logo: "/ps.png" },
-  { name: "Brand 5", logo: "/ps.png" },
-  { name: "Brand 6", logo: "/ps.png" },
+const brands: any[] = [
+  // { name: "Brand 1", logo: "/ps.png" },
+  // { name: "Brand 2", logo: "/ps.png" },
+  // { name: "Brand 3", logo: "/ps.png" },
+  // { name: "Brand 4", logo: "/ps.png" },
+  // { name: "Brand 5", logo: "/ps.png" },
+  // { name: "Brand 6", logo: "/ps.png" },
 ]
 
 export default function Brands() {
@@ -23,8 +23,8 @@ export default function Brands() {
           transition={{ duration: 0.5 }}
           className="text-center"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">Trusted by Leading Brands</h2>
-          <p className="mt-4 text-lg text-gray-600">Join hundreds of successful brands using our platform</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 text--white">Trusted by Leading Brands</h2>
+          <p className="mt-4 text-lg text-gray-600 text--white">Join hundreds of successful brands using our platform</p>
         </motion.div>
 
         <motion.div
