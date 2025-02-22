@@ -3,11 +3,14 @@
 import { motion } from "framer-motion"
 import { Mail, Phone, MapPin } from "lucide-react"
 import emailjs from 'emailjs-com';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { setTimeout } from "node:timers";
 
 export default function Contact() {
   const address = "https://www.google.com/maps/place/NRK+BizPark/@22.7454853,75.8944308,16.36z/data=!4m6!3m5!1s0x3962fdeb6743d8db:0xc94c7ca59c794fe7!8m2!3d22.7457975!4d75.8963479!16s%2Fg%2F11jrjzcjtg?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D"
-
+  
+  const [status, setStatus] = useState(''); // to track submission status
+  const [loading, setLoading] = useState(false);
   // State for managing the form submission
   const [formData, setFormData] = useState({
     name: '',
@@ -15,7 +18,12 @@ export default function Contact() {
     message: ''
   });
 
-  const [status, setStatus] = useState(''); // to track submission status
+  useEffect(() => {
+    setTimeout(() => {
+      setStatus('')
+    }, 3000)
+  }, [status])
+
 
   // Handle form changes
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -29,11 +37,12 @@ export default function Contact() {
   // Handle form submit
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
+    setStatus('')
+    setLoading(true);
     // EmailJS service details
-    const serviceID = 'YOUR_SERVICE_ID'; // Replace with your service ID
-    const templateID = 'YOUR_TEMPLATE_ID'; // Replace with your template ID
-    const userID = 'YOUR_USER_ID'; // Replace with your user ID
+    const serviceID = 'service_objlxxg'; // Replace with your service ID
+    const templateID = 'template_g9s0cqk'; // Replace with your template ID
+    const userID = 'meFGT1KhJXCBEhJOO'; // Replace with your user ID
 
     try {
       const response = await emailjs.send(serviceID, templateID, formData, userID);
@@ -43,6 +52,8 @@ export default function Contact() {
     } catch (error) {
       console.error('Error sending email:', error);
       setStatus('Failed to send message. Please try again later.');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -111,6 +122,7 @@ export default function Contact() {
                 type="text"
                 id="name"
                 name="name"
+                required
                 value={formData.name}
                 onChange={handleChange}
                 placeholder="Enter your name"
@@ -125,6 +137,7 @@ export default function Contact() {
                 type="email"
                 id="email"
                 name="email"
+                required
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Enter your email"
@@ -141,15 +154,23 @@ export default function Contact() {
                 value={formData.message}
                 onChange={handleChange}
                 rows={4}
+                required
                 placeholder="Enter a message"
                 className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 shadow-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
               />
             </div>
             <button
               type="submit"
-              className="w-full rounded-md bg-blue-500 px-4 py-2 text-white font-medium hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
+              disabled={loading}
+              className="w-full rounded-md bg-blue-500 px-4 py-2 flex items-center justify-center text-white font-medium hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
             >
-              Send Message
+              {
+                loading ? 
+                <span className="loader"></span>:
+                <span>
+                  Send Message
+                </span>
+              }
             </button>
             {status && <p className="mt-4 text-center text-gray-900">{status}</p>}
           </motion.form>
