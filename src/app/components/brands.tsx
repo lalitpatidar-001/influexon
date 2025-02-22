@@ -4,12 +4,12 @@ import { motion } from "framer-motion"
 import Image from "next/image"
 
 const brands: any[] = [
-  // { name: "Brand 1", logo: "/ps.png" },
-  // { name: "Brand 2", logo: "/ps.png" },
-  // { name: "Brand 3", logo: "/ps.png" },
-  // { name: "Brand 4", logo: "/ps.png" },
-  // { name: "Brand 5", logo: "/ps.png" },
-  // { name: "Brand 6", logo: "/ps.png" },
+  { name: "Brand 1", logo: "/ps.png" },
+  { name: "Brand 2", logo: "/ps.png" },
+  { name: "Brand 3", logo: "/ps.png" },
+  { name: "Brand 4", logo: "/ps.png" },
+  { name: "Brand 5", logo: "/ps.png" },
+  { name: "Brand 6", logo: "/ps.png" },
 ]
 
 export default function Brands() {
