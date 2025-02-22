@@ -13,6 +13,9 @@ export default function ThemeToggle() {
   useEffect(() => {
     setMounted(true);
     setTheme(sessionStorage.getItem('theme') || 'light')
+    if(theme !== 'light' && theme !== 'dark') {
+      setTheme('light');
+    }
   }, []);
   useEffect(() => {
       sessionStorage.setItem('theme', theme || 'light');
