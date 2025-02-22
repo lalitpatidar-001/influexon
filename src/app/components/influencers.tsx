@@ -5,22 +5,22 @@ import Image from "next/image"
 
 const influencers = [
   {
-    name: "Fashion & Lifestyle",
-    followers: "1M+",
-    image: "/cel.jpg",
+    name: "Classic Gears(YT)",
+    followers: "300K+",
+    image: "/shivraj_jadhav.jpg",
   },
   {
-    name: "Tech & Gaming",
-    followers: "500K+",
-    image: "/cel.jpg",
+    name: "mananify(IG)",
+    followers: "50K+",
+    image: "/mannan.jpg",
   },
   {
-    name: "Food & Travel",
-    followers: "750K+",
-    image: "/cel.jpg",
+    name: "Jay Choudhary(YT)",
+    followers: "24K+",
+    image: "/jay_choudhary.jpg",
   },
   {
-    name: "Health & Fitness",
+    name: "Aadhya Sharma",
     followers: "900K+",
     image: "/cel.jpg",
   },

@@ -45,7 +45,7 @@ export default function Hero() {
               </motion.div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight">
                 Connect Brands with{" "}
-                <span className="bg-gradient-to-r from-primary to-primary/50 bg-clip-text text-transparent">
+                <span className="!text-[#b22222] bg-clip-text text-transparent">
                   Influencers
                 </span>
               </h1>

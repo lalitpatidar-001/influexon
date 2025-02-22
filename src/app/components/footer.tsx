@@ -5,10 +5,10 @@ import Link from "next/link"
 import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react"
 
 const socialLinks = [
-  { name: "Facebook", icon: Facebook, href: "#" },
-  { name: "Twitter", icon: Twitter, href: "#" },
-  { name: "Instagram", icon: Instagram, href: "#" },
-  { name: "LinkedIn", icon: Linkedin, href: "#" },
+  // { name: "Facebook", icon: Facebook, href: "#" },
+  // { name: "Twitter", icon: Twitter, href: "#" },
+  { name: "Instagram", icon: Instagram, href: "influexon" },
+  { name: "LinkedIn", icon: Linkedin, href: "https://www.linkedin.com/company/influexon/" },
 ]
 
 export default function Footer() {
@@ -77,7 +77,7 @@ export default function Footer() {
             <h3 className="text-lg font-semibold">Follow Us</h3>
             <div className="flex space-x-4">
               {socialLinks.map((social) => (
-                <Link key={social.name} href={social.href} className="text-gray-400 hover:text-white transition-colors">
+                <Link key={social.name} href={social.href} target="_blank" className="text-gray-400 hover:text-white transition-colors">
                   <social.icon className="h-6 w-6" />
                   <span className="sr-only">{social.name}</span>
                 </Link>

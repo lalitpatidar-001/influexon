@@ -4,9 +4,9 @@ import { motion, useScroll, useTransform } from "framer-motion"
 import { useRef, useEffect, useState } from "react"
 
 const stats = [
-  { label: "Active Brands", value: 500 },
-  { label: "Influencers", value: 10000 },
-  { label: "Campaigns", value: 2500 },
+  { label: "Active Brands", value: 50, suffix:"+"},
+  { label: "Influencers", value: 500, suffix:"+" },
+  { label: "Campaigns", value: 20 },
   { label: "Success Rate", value: 95, suffix: "%" },
 ]
 

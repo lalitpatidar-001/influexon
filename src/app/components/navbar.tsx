@@ -42,10 +42,11 @@ export default function Navbar() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="flex items-center">
+          <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="flex items-center gap-2">
+          <img src="/influexon_logo.jpg" className="h-10 w-10 rounded-full"/>
             <Link
               href="/"
-              className="text-2xl font-bold !text-blue-700 bg-clip-text text-transparent"
+              className="text-2xl font-bold !text-[#052E40] bg-clip-text text-transparent"
             >
               Influexon
             </Link>

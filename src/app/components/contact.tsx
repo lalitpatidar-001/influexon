@@ -30,14 +30,14 @@ export default function Contact() {
               <Mail className="h-6 w-6 text-primary mt-1" />
               <div>
                 <h3 className="text-lg font-semibold text-gray-900">Email</h3>
-                <p className="mt-1 text-gray-600">contact@influexon.com</p>
+                <p className="mt-1 text-gray-600">team@influexon.com</p>
               </div>
             </div>
             <div className="flex items-start space-x-4">
               <Phone className="h-6 w-6 text-primary mt-1" />
               <div>
                 <h3 className="text-lg font-semibold text-gray-900">Phone</h3>
-                <p className="mt-1 text-gray-600">+1 (555) 123-4567</p>
+                <p className="mt-1 text-gray-600">+91 91713-08396</p>
               </div>
             </div>
             <div className="flex items-start space-x-4">
@@ -45,9 +45,9 @@ export default function Contact() {
               <div>
                 <h3 className="text-lg font-semibold text-gray-900">Location</h3>
                 <p className="mt-1 text-gray-600">
-                  123 Innovation Street
+                  511, NRK BIZ PARK behind C-21 MALL
                   <br />
-                  San Francisco, CA 94103
+                  Indore, Madhya Pradesh 452018
                 </p>
               </div>
             </div>
