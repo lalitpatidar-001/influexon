@@ -5,25 +5,19 @@ import { Mail, Phone, MapPin } from "lucide-react"
 import emailjs from 'emailjs-com';
 import { useEffect, useState } from 'react';
 import { setTimeout } from "node:timers";
+import toast from "react-hot-toast";
 
 export default function Contact() {
   const address = "https://www.google.com/maps/place/NRK+BizPark/@22.7454853,75.8944308,16.36z/data=!4m6!3m5!1s0x3962fdeb6743d8db:0xc94c7ca59c794fe7!8m2!3d22.7457975!4d75.8963479!16s%2Fg%2F11jrjzcjtg?entry=ttu&g_ep=EgoyMDI1MDIxOS4xIKXMDSoASAFQAw%3D%3D"
   
-  const [status, setStatus] = useState(''); // to track submission status
   const [loading, setLoading] = useState(false);
   // State for managing the form submission
   const [formData, setFormData] = useState({
     name: '',
     email: '',
+    number: '',
     message: ''
   });
-
-  useEffect(() => {
-    setTimeout(() => {
-      setStatus('')
-    }, 3000)
-  }, [status])
-
 
   // Handle form changes
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -37,21 +31,20 @@ export default function Contact() {
   // Handle form submit
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus('')
     setLoading(true);
     // EmailJS service details
-    const serviceID = 'service_objlxxg'; // Replace with your service ID
-    const templateID = 'template_g9s0cqk'; // Replace with your template ID
-    const userID = 'meFGT1KhJXCBEhJOO'; // Replace with your user ID
+    const serviceID = 'service_objlxxg';
+    const templateID = 'template_g9s0cqk';
+    const userID = 'meFGT1KhJXCBEhJOO';
 
     try {
-      const response = await emailjs.send(serviceID, templateID, formData, userID);
-      console.log('Email sent successfully:', response);
-      setStatus('Message sent successfully!');
-      setFormData({ name: '', email: '', message: '' }); // Clear form after submit
-    } catch (error) {
-      console.error('Error sending email:', error);
-      setStatus('Failed to send message. Please try again later.');
+        const response = await emailjs.send(serviceID, templateID, formData, userID);
+        console.log('Email sent successfully:', response);
+        toast.success('Message Sent Successfully!');
+        setFormData({ name: '', email: '', message: '' , number: ''})
+      } catch (error) {
+        console.error('Error sending email:', error);
+        toast.success('Failed to send message. Please try again later.');
     } finally {
       setLoading(false);
     }
@@ -116,7 +109,7 @@ export default function Contact() {
           >
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-700 text--white">
-                Name
+                Name <span className="text-red-500">*</span>
               </label>
               <input
                 type="text"
@@ -131,7 +124,7 @@ export default function Contact() {
             </div>
             <div>
               <label htmlFor="email" className="block text-sm font-medium text-gray-700 text--white">
-                Email
+                Email <span className="text-red-500">*</span>
               </label>
               <input
                 type="email"
@@ -145,8 +138,22 @@ export default function Contact() {
               />
             </div>
             <div>
+              <label htmlFor="number" className="block text-sm font-medium text-gray-700 text--white">
+                Phone Number
+              </label>
+              <input
+                type="number"
+                id="number"
+                name="number"
+                value={formData.number}
+                onChange={handleChange}
+                placeholder="Enter your Phone number"
+                className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 shadow-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
+              />
+            </div>
+            <div>
               <label htmlFor="message" className="block text-sm font-medium text-gray-700 text--white">
-                Message
+                Message <span className="text-red-500">*</span>
               </label>
               <textarea
                 id="message"
@@ -172,7 +179,6 @@ export default function Contact() {
                 </span>
               }
             </button>
-            {status && <p className="mt-4 text-center text-gray-900">{status}</p>}
           </motion.form>
         </div>
       </div>
