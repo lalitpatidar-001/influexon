@@ -11,10 +11,7 @@ import Stats from "@/app/components/stats"
 import Contact from "@/app/components/contact"
 import Footer from "@/app/components/footer"
 import { useEffect, useState } from "react"
-import { setTimeout } from "node:timers"
 import WelcomePopup from "./components/WelcomePopup"
-import { document } from "postcss"
-import { json } from "node:stream/consumers"
 
 export default function Home() {
   const [showPopup, setShowPopup] = useState(false);
