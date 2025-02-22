@@ -93,7 +93,7 @@ export default function Influencers() {
                     <h3 className="text-xl font-semibold">{influencer.name}</h3>
                   </div>
                   <p className="text-sm opacity-90">{influencer.followers} Followers</p>
-                  <p className="text-sm opacity-90">{influencer.name}</p>
+                  {/* <p className="text-sm opacity-90">{influencer.name}</p> */}
                 </div>
               </motion.div>
             </a>
