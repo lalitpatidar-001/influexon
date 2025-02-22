@@ -64,7 +64,7 @@ export default function Navbar() {
                 <motion.div key={item.name} variants={itemVariants}>
                   <Link
                     href={item.href}
-                    className="text-sm font-medium text-foreground/80 hover:text-primary transition-colors"
+                    className="text-sm hover:text-red-500 font-medium text-foreground/80 hover:text-primary transition-colors"
                   >
                     {item.name}
                   </Link>
