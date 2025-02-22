@@ -47,7 +47,7 @@ export default function Stats() {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1])
 
   return (
-    <section ref={ref} className="py-24 bg-gradient-to-b from-background to-accent">
+    <section id="stats" ref={ref} className="py-24 bg-gradient-to-b from-background to-accent">
       <motion.div style={{ scale, opacity }} className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           {stats.map((stat, index) => (

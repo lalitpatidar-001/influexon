@@ -57,10 +57,10 @@ export default function Footer() {
           >
             <h3 className="text-lg font-semibold">Services</h3>
             <ul className="space-y-2">
-              {["Brand Partnerships", "Campaign Management", "Analytics", "Consulting"].map((item) => (
-                <li key={item}>
-                  <Link href="#" className="text-gray-400 hover:text-white transition-colors">
-                    {item}
+              {[{link: "#brands", title: "Brand Partnerships"}, {link:"", title: "Campaign Management"}, {link: "#stats", title: "Analytics"}, {link: "#contact", title:"Consulting"}].map((item, index) => (
+                <li key={index}>
+                  <Link href={item.link} className="text-gray-400 hover:text-white transition-colors">
+                    {item.title}
                   </Link>
                 </li>
               ))}
